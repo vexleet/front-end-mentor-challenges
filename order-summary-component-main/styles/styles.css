@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+body {
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: hsl(225, 100%, 94%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+body p {
+    font-size: 16px;
+}
+
+.pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    max-height: 40vh;
+}
+
+.order-summary {
+    width: 100%;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+
+.order-summary > img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.order-summary-content {
+    padding: 0 36px 10px;
+    text-align: center;
+}
+
+.order-summary-title {
+    color: hsl(223, 47%, 23%);
+    font-weight: 900;
+    font-size: 25px;
+    margin: 30px 0 20px;
+}
+
+.order-summary-desc {
+    color: hsl(224, 23%, 55%);
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.order-plan {
+    display: flex;
+    background-color: hsl(225, 100%, 98%);
+    border-radius: 20px;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.plan-details {
+    text-align: left;
+    margin-right: auto;
+    margin-left: 15px;
+}
+
+.plan-details .plan-type {
+    font-weight: 900;
+    color: hsl(223, 47%, 23%);
+    margin-bottom: 5px;
+}
+
+.plan-details .plan-price {
+    color: hsl(224, 23%, 55%);
+}
+
+.order-plan a{
+    color: hsl(245, 75%, 52%);
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.order-plan a:hover {
+    color: hsl(245, 91%, 70%)
+}
+
+.base-button {
+    text-decoration: none;
+    border: 0;
+    outline: 0;
+    text-align: center;
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s linear, color 0.2s linear;
+}
+
+.base-button.main {
+    color: #fff;
+    background-color: hsl(245, 75%, 52%);
+    box-shadow: 0 10px 25px 0 rgba(168, 167, 167, 0.55);
+}
+
+.base-button.main:hover {
+    background-color: hsl(245, 91%, 70%);
+}
+
+.base-button.secondary {
+    color: hsl(224, 23%, 55%);
+    background-color: transparent;
+}
+
+.base-button.secondary:hover {
+    color: hsl(223, 47%, 23%);
+}
+
+@media screen and (min-width: 800px) {
+    .order-summary {
+        max-width: 400px;
+    }
+}

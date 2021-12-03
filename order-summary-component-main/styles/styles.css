@@ -4,7 +4,6 @@ body {
     font-family: 'Red Hat Display', sans-serif;
     background-color: hsl(225, 100%, 94%);
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 100vh;
@@ -25,10 +24,10 @@ body p {
 
 .order-summary {
     width: 100%;
-    max-width: 350px;
+    max-width: 330px;
     background-color: #fff;
-    border-radius: 20px;
-    margin: 0 auto;
+    border-radius: 22px;
+    margin: 70px auto 0;
 }
 
 .order-summary > img {
@@ -37,15 +36,15 @@ body p {
 }
 
 .order-summary-content {
-    padding: 0 36px 10px;
+    padding: 0 26px 10px;
     text-align: center;
 }
 
 .order-summary-title {
     color: hsl(223, 47%, 23%);
     font-weight: 900;
-    font-size: 25px;
-    margin: 30px 0 20px;
+    font-size: 22px;
+    margin: 32px 0 20px;
 }
 
 .order-summary-desc {
@@ -58,7 +57,7 @@ body p {
     display: flex;
     background-color: hsl(225, 100%, 98%);
     border-radius: 20px;
-    padding: 15px;
+    padding: 20px 16px;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
@@ -67,17 +66,19 @@ body p {
 .plan-details {
     text-align: left;
     margin-right: auto;
-    margin-left: 15px;
+    margin-left: 18px;
 }
 
 .plan-details .plan-type {
     font-weight: 900;
     color: hsl(223, 47%, 23%);
     margin-bottom: 5px;
+    font-size: 14px;
 }
 
 .plan-details .plan-price {
     color: hsl(224, 23%, 55%);
+    font-size: 15px;
 }
 
 .order-plan a{
@@ -97,7 +98,7 @@ body p {
     text-align: center;
     display: block;
     width: 100%;
-    padding: 20px 0;
+    padding: 16px 0;
     font-weight: 700;
     font-size: 15px;
     border-radius: 15px;
@@ -109,6 +110,7 @@ body p {
     color: #fff;
     background-color: hsl(245, 75%, 52%);
     box-shadow: 0 10px 25px 0 rgba(168, 167, 167, 0.55);
+    margin-bottom: 10px;
 }
 
 .base-button.main:hover {
@@ -126,6 +128,49 @@ body p {
 
 @media screen and (min-width: 800px) {
     .order-summary {
-        max-width: 400px;
+        max-width: 450px;
+        margin-top: 100px;
+    }
+
+    .order-summary-content {
+        padding: 0 50px 10px;
+    }
+
+    .order-summary-title {
+        font-size: 28px;
+        margin: 50px 0 20px;
+    }
+
+    .order-summary-desc {
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+
+    .order-plan {
+        padding: 21px 22px;
+        margin-bottom: 35px;
+    }
+
+    .plan-details {
+        margin-left: 21px;
+    }
+
+    .plan-type {
+        margin-bottom: 10px;
+    }
+
+    .plan-type, .plan-price {
+        font-size: 16px;
+    }
+
+    .base-button {
+        font-size: 14px;
+        font-weight: 900;
+        padding: 16px 0;
+
+    }
+
+    .base-button.main {
+        margin-bottom: 17px;
     }
 }

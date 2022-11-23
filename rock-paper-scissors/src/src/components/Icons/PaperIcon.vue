@@ -1,5 +1,5 @@
 <template>
-  <IconLayout  color="paperIconColor" img-src="src/assets/images/icon-paper.svg"/>
+  <IconLayout color="border-paperIconColor" img-src="src/assets/images/icon-paper.svg"/>
 </template>
 
 <script setup lang="ts">

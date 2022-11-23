@@ -1,5 +1,5 @@
 <template>
-  <IconLayout  color="rockIconColor" img-src="src/assets/images/icon-rock.svg"/>
+  <IconLayout color="border-rockIconColor" img-src="src/assets/images/icon-rock.svg"/>
 
 </template>
 

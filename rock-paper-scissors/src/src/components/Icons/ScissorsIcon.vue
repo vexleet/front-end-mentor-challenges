@@ -1,5 +1,5 @@
 <template>
-  <IconLayout  color="scissorsIconColor" img-src="src/assets/images/icon-scissors.svg"/>
+  <IconLayout color="border-scissorsIconColor" img-src="src/assets/images/icon-scissors.svg"/>
 
 </template>
 

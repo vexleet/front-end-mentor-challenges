@@ -8,7 +8,7 @@
     <Transition
         enter-from-class="w-0"
         enter-to-class="w-[200px]"
-        enter-active-class="transition-all overflow-hidden whitespace-nowrap ov duration-1000 delay-[2000ms]">
+        enter-active-class="transition-all overflow-hidden whitespace-nowrap duration-1000 delay-[1500ms]">
       <PlayAgain v-if="hasRendered" :has-won="userHasWon" />
     </Transition>
     <Transition

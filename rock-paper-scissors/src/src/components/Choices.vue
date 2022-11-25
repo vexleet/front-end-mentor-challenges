@@ -1,5 +1,5 @@
 <template>
-  <div class="w-1/5 mx-auto mt-16 relative">
+  <div class="w-[220px] mx-auto mt-16 relative">
     <img class="w-full" src="src/assets/images/bg-triangle.svg"/>
     <div>
       <PaperIcon @click="pick('paper')" class="absolute left-[-40px] top-[-40px]"/>

@@ -1,8 +1,21 @@
 <template>
   <div class="flex gap-12 justify-center mt-10 items-center">
-    <ChoiceItem :component="userChoice" title="You picked"/>
-    <PlayAgain :has-won="userHasWon" />
-    <ChoiceItem :component="computerIcon" title="The house picked"/>
+    <Transition
+        enter-from-class="opacity-0"
+        enter-active-class="transition duration-[1500ms]">
+      <ChoiceItem v-if="hasRendered" :component="userChoice" title="You picked"/>
+    </Transition>
+    <Transition
+        enter-from-class="w-0"
+        enter-to-class="w-[200px]"
+        enter-active-class="transition-all overflow-hidden whitespace-nowrap ov duration-1000 delay-[2000ms]">
+      <PlayAgain v-if="hasRendered" :has-won="userHasWon" />
+    </Transition>
+    <Transition
+        enter-from-class="opacity-0"
+        enter-active-class="transition duration-[1500ms] delay-500">
+          <ChoiceItem v-if="hasRendered" :component="computerIcon" title="The house picked"/>
+    </Transition>
   </div>
 </template>
 
@@ -13,7 +26,7 @@ import PaperIcon from '@/components/Icons/PaperIcon.vue';
 import {useGameStore} from '@/store/gameStore';
 import {Choices} from '@/types/Game';
 import ScissorsIcon from '@/components/Icons/ScissorsIcon.vue';
-import {computed, onMounted, ref} from 'vue';
+import {computed, nextTick, onBeforeMount, onMounted, ref} from 'vue';
 import PlayAgain from '@/components/PlayAgain.vue';
 
 type ChoicesComponents = Record<Choices, any>
@@ -44,6 +57,10 @@ const checkWinner = (left: Choices, right: Choices, changeValue: boolean) => {
   if(left === "scissors" && right === "paper") userHasWon.value = changeValue
   if(left === "paper" && right === "rock") userHasWon.value = changeValue
 }
+
+const hasRendered = ref(false)
+
+onBeforeMount(() => nextTick(() => hasRendered.value = true))
 
 onMounted(() => {
   const user = gameStore.choice!

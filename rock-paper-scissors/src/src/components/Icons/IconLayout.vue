@@ -14,7 +14,6 @@ type IconLayoutProps = {
 
 defineProps<IconLayoutProps>()
 
-
 </script>
 
 <style scoped>

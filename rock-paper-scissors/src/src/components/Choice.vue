@@ -1,7 +1,8 @@
 <template>
-  <div class="flex gap-8 justify-center mt-10">
+  <div class="flex gap-12 justify-center mt-10 items-center">
     <ChoiceItem :component="userChoice" title="You picked"/>
-    <ChoiceItem :component="computerChoice" title="The house picked"/>
+    <PlayAgain :has-won="userHasWon" />
+    <ChoiceItem :component="computerIcon" title="The house picked"/>
   </div>
 </template>
 
@@ -12,7 +13,8 @@ import PaperIcon from '@/components/Icons/PaperIcon.vue';
 import {useGameStore} from '@/store/gameStore';
 import {Choices} from '@/types/Game';
 import ScissorsIcon from '@/components/Icons/ScissorsIcon.vue';
-import {computed} from 'vue';
+import {computed, onMounted, ref} from 'vue';
+import PlayAgain from '@/components/PlayAgain.vue';
 
 type ChoicesComponents = Record<Choices, any>
 
@@ -32,8 +34,26 @@ const randomChoice = (): keyof ChoicesComponents => {
   return keys[Math.floor(Math.random() * keys.length)]
 }
 
-const computerChoice = choicesComponents[randomChoice()]
+const computerChoice = ref(randomChoice())
+const computerIcon = computed( () => choicesComponents[computerChoice.value])
 
+const userHasWon = ref(false)
+
+const checkWinner = (left: Choices, right: Choices, changeValue: boolean) => {
+  if(left === "rock" && right === "scissors") userHasWon.value = changeValue
+  if(left === "scissors" && right === "paper") userHasWon.value = changeValue
+  if(left === "paper" && right === "rock") userHasWon.value = changeValue
+}
+
+onMounted(() => {
+  const user = gameStore.choice!
+  const computer = computerChoice.value
+
+  checkWinner(user, computer, true)
+  checkWinner(computer, user, false)
+
+  gameStore.updateScore(userHasWon.value)
+})
 </script>
 
 <style scoped>

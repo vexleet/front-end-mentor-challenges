@@ -1,21 +1,29 @@
 <template>
   <div class="flex gap-12 justify-center mt-10 items-center">
-    <Transition
-        enter-from-class="opacity-0"
-        enter-active-class="transition duration-[1500ms]">
-      <ChoiceItem v-if="hasRendered" :component="userChoice" title="You picked"/>
-    </Transition>
+    <div class="relative">
+      <div class="choice-item-bg">
+      </div>
+      <Transition
+          enter-from-class="opacity-0"
+          enter-active-class="transition duration-[1500ms]">
+        <ChoiceItem v-if="hasRendered" :has-animation="userHasWon" :component="userChoice" title="You picked"/>
+      </Transition>
+    </div>
     <Transition
         enter-from-class="w-0"
         enter-to-class="w-[200px]"
         enter-active-class="transition-all overflow-hidden whitespace-nowrap duration-1000 delay-[1500ms]">
       <PlayAgain v-if="hasRendered" :has-won="userHasWon" />
     </Transition>
-    <Transition
-        enter-from-class="opacity-0"
-        enter-active-class="transition duration-[1500ms] delay-500">
-          <ChoiceItem v-if="hasRendered" :component="computerIcon" title="The house picked"/>
-    </Transition>
+    <div class="relative">
+      <div class="choice-item-bg">
+      </div>
+      <Transition
+          enter-from-class="opacity-0"
+          enter-active-class="transition duration-[1500ms] delay-500">
+            <ChoiceItem v-if="hasRendered" :has-animation="!userHasWon" :component="computerIcon" title="The house picked"/>
+      </Transition>
+    </div>
   </div>
 </template>
 
@@ -74,5 +82,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
+.choice-item-bg {
+  @apply absolute -z-10 bottom-0 left-0 bg-darkText w-[160px] h-[160px] rounded-full
+}
 </style>

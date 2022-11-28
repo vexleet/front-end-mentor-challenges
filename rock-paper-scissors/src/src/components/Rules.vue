@@ -7,7 +7,7 @@
       <div class="bg-white rounded-lg px-6 py-5 w-fit ">
         <div class="flex items-center justify-between mb-5">
           <p class="uppercase text-darkText text-3xl font-bold ">Rules</p>
-          <p @click="modalIsOpen = false" class="text-gray-300 text-3xl">x</p>
+          <p @click="modalIsOpen = false" class="text-gray-300 text-3xl cursor-pointer">x</p>
         </div>
         <img class="w-11/12 mx-auto" src="src/assets/images/image-rules.svg"/>
       </div>

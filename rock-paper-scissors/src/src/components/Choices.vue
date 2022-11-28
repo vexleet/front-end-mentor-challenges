@@ -2,9 +2,9 @@
   <div class="w-[220px] mx-auto mt-16 relative">
     <img class="w-full" src="src/assets/images/bg-triangle.svg"/>
     <div>
-      <PaperIcon @click="pick('paper')" class="absolute left-[-40px] top-[-40px]"/>
-      <ScissorsIcon @click="pick('scissors')" class="absolute right-[-40px] top-[-40px]"/>
-      <RockIcon @click="pick('rock')" class="absolute bottom-[-40px] left-2/4 -translate-x-2/4 " />
+      <PaperIcon @click="pick('paper')" class="absolute cursor-pointer left-[-40px] top-[-40px]"/>
+      <ScissorsIcon @click="pick('scissors')" class="absolute cursor-pointer right-[-40px] top-[-40px]"/>
+      <RockIcon @click="pick('rock')" class="absolute cursor-pointer bottom-[-40px] left-2/4 -translate-x-2/4 " />
     </div>
 
   </div>
